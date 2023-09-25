@@ -24,5 +24,9 @@ public class OwnerController {
     public List<Owner> getOwners(){
         return ownerService.getOwners();
     }
+    @GetMapping("/ensayo")
+    public String getMessage(){
+        return "Mensaje";
+    }
 
 }
