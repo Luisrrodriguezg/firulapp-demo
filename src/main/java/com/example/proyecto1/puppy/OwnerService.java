@@ -1,15 +1,20 @@
 package com.example.proyecto1.puppy;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
 public class OwnerService {
 
+    private final OwnerRepository ownerRepository;
+    @Autowired
+    public OwnerService(OwnerRepository ownerRepository) {
+        this.ownerRepository = ownerRepository;
+    }
+
     public List<Owner> getOwners(){
-        return List.of(new Owner("Mario", "Antioquia", LocalDate.of(2004,9,23), "sofiaaristizabal23@gmail.com", 1025642483L));
+        return ownerRepository.findAll();
     }
 }

@@ -22,6 +22,7 @@ public class Owner {
     )
 
     //Creating the attributes of the class owner
+    private Long id;
     private String name;
     private String departament;
     private LocalDate dob;
@@ -30,7 +31,6 @@ public class Owner {
     //We use @Transient to be able to call the object Pet into our database
     @Transient
     private ArrayList<Pet> pets;
-    private Long id;
 
     public Owner() {
     }
