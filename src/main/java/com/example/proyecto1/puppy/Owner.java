@@ -2,6 +2,7 @@ package com.example.proyecto1.puppy;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 
 @Entity
@@ -28,7 +29,9 @@ public class Owner {
     private LocalDate dob;
     private String email;
 
-    //We use @Transient to be able to call the object Pet into our database
+    //We use @Transient so that this attributes will not be columns on the database, it adds it to the database without asking for it
+    @Transient
+    private Integer age;
     @Transient
     private ArrayList<Pet> pets;
 
@@ -36,12 +39,11 @@ public class Owner {
     }
 
     // Constructor of the class Owner
-    public Owner(String name, String departament, LocalDate dob, String email, Long id) {
+    public Owner(String name, String departament, LocalDate dob, String email) {
         this.name = name;
         this.departament = departament;
         this.dob = dob;
         this.email = email;
-        this.id = id;
     }
 
     //we create the setters and getters of the class
@@ -93,6 +95,12 @@ public class Owner {
         this.id = id;
     }
 
+    //This method calculates the age of the owner based on the date of birth
+    public Integer getAge() {
+
+        return Period.between(this.dob, LocalDate.now()).getYears();
+    }
+
     //We create a toString ,method that allows us to print all the information of the attributes in the class owner
     @Override
     public String toString() {
@@ -103,6 +111,7 @@ public class Owner {
                 ", email='" + email + '\'' +
                 ", pets=" + pets +
                 ", id=" + id +
+                ", age=" + getAge() +
                 '}';
     }
 }

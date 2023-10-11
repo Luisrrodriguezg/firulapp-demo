@@ -21,8 +21,7 @@ public class OwnerConfig {
                     "Sofia",
                     "Antioquia",
                     LocalDate.of(2004, Month.SEPTEMBER, 23),
-                    "sofiaaristizabal23@gmail.com",
-                    1025642483L
+                    "sofiaaristizabal23@gmail.com"
             );
 
             Owner Juanse = new Owner(
@@ -30,8 +29,7 @@ public class OwnerConfig {
                     "Juanse",
                     "Huila",
                     LocalDate.of(2006, Month.JULY, 28),
-                    "sofiaaristizabal23@gmail.com",
-                    1025642483L
+                    "sofiaaristizabal23@gmail.com"
             );
 
             Owner Luis = new Owner(
@@ -39,8 +37,7 @@ public class OwnerConfig {
                     "Luis",
                     "Bolivar",
                     LocalDate.of(2005, Month.OCTOBER, 21),
-                    "sofiaaristizabal23@gmail.com",
-                    1025642483L
+                    "sofiaaristizabal23@gmail.com"
             );
 
             repository.saveAll(
