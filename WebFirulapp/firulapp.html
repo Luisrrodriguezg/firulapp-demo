@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Firulapp</title>
+</head>
+<body>
+    <header>
+        <h1>My Firulapp</h1>
+        <button id="addEventButton">Add Event</button>
+    </header>
+
+    <main>
+        <div id="calendar">
+            <!-- Calendar content goes here -->
+        </div>
+
+        <div id="eventModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Create Event</h2>
+                <form id="eventForm">
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" name="eventName" required>
+                    
+                    <label for="eventDate">Date:</label>
+                    <input type="date" id="eventDate" name="eventDate" required>
+                    
+                    <label for="eventTime">Time:</label>
+                    <input type="time" id="eventTime" name="eventTime" required>
+
+                    <input type="submit" value="Save">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="calendar.js"></script>
+</body>
+</html>
