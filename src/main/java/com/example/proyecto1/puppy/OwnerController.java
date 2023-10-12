@@ -38,7 +38,7 @@ public class OwnerController {
         ownerService.deleteOwner(ownerId);
     }
 
-    @PutMapping(path = "{ownerId}}")
+    @PutMapping(path = "{ownerId}")
     public void updateOwner( @PathVariable("ownerId") Long ownerId,
                              @RequestParam(required = false) String name,
                              @RequestParam(required = false) String department,
