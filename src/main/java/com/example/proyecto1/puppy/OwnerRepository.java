@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+//This interface contains a bunch of methods that allow us to interact with the database
+
 @Repository
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
 

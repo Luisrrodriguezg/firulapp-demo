@@ -28,6 +28,18 @@ public class OwnerService {
      }
     }
 
+    public void deleteOwner(Long OwnerId){
+
+        boolean exist = ownerRepository.existsById(OwnerId);
+
+        if(!exist){
+            throw new IllegalStateException("Owner with Id " + OwnerId + " does not exist");
+        } else{
+            ownerRepository.deleteById(OwnerId);
+        }
+
+    }
+
     public List<Owner> getOwners(){
         return ownerRepository.findAll();
     }
