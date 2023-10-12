@@ -1,5 +1,6 @@
 package com.example.proyecto1.puppy;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +40,31 @@ public class OwnerService {
         }
 
     }
+
+    @Transactional
+    public void updateOwner(Long id, String name, String department, String email){
+     Owner owner = ownerRepository.findById(id).orElseThrow( () -> new IllegalStateException("student with id " + id+ " does not exist"));
+
+     if(name != null && !name.isEmpty() && !owner.getName().equals(name)){
+          owner.setName(name);
+     }
+
+     if(department != null && !department.isEmpty() && !owner.getDepartament().equals(department)){
+            owner.setDepartament(department);
+     }
+
+     if(email != null && !email.isEmpty() && !owner.getEmail().equals(email)){
+            Optional<Owner> ownerOptional = ownerRepository.findByEmail(email);
+
+            if(ownerOptional.isPresent()) {
+                throw new IllegalStateException("This email is already taken");
+            } else{
+                owner.setEmail(email);
+            }
+     }
+
+    }
+
 
     public List<Owner> getOwners(){
         return ownerRepository.findAll();

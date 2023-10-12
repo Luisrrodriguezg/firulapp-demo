@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static com.sun.beans.introspect.PropertyInfo.Name.required;
+
 @RestController
 @RequestMapping(path="api/v1/Owner")
 
@@ -34,6 +36,15 @@ public class OwnerController {
     @DeleteMapping(path = "{ownerId}")
     public void deleteOwner(@PathVariable("ownerId") Long ownerId){
         ownerService.deleteOwner(ownerId);
+    }
+
+    @PutMapping(path = "{ownerId}}")
+    public void updateOwner( @PathVariable("ownerId") Long ownerId,
+                             @RequestParam(required = false) String name,
+                             @RequestParam(required = false) String department,
+                             @RequestParam(required = false) String email) {
+
+        ownerService.updateOwner(ownerId, name, department, email);
     }
 
 
