@@ -10,5 +10,10 @@ public class Pet {
     private int biologicalGender;
     private String name;
 
-
+    public Pet(String species, int age, int biologicalGender, String name){
+        this.Species = species;
+        this.age = age;
+        this.biologicalGender = biologicalGender;
+        this.name = name;
+    }
 }

@@ -33,7 +33,7 @@ public class Owner {
     @Transient
     private Integer age;
     @Transient
-    private ArrayList<Pet> pets;
+    private ArrayList<Pet> pets = new ArrayList<>();
 
     public Owner() {
     }
@@ -83,8 +83,9 @@ public class Owner {
         return pets;
     }
 
-    public void setPets(ArrayList<Pet> pets) {
-        this.pets = pets;
+    public void setPets(Pet pet) {
+
+        pets.add(pet);
     }
 
     public Long getId() {

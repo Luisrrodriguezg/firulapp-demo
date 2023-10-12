@@ -47,6 +47,15 @@ public class OwnerController {
         ownerService.updateOwner(ownerId, name, department, email);
     }
 
+    @PutMapping(path = "/pet")
+    public void addPet(     @RequestParam(required = true) Long ownerId,
+                             @RequestParam(required = true) String species,
+                             @RequestParam(required = false) int age,
+                             @RequestParam(required = false) int biologicalGender,
+                             @RequestParam(required = true) String name) {
+
+        ownerService.addPet(ownerId, species, age, biologicalGender, name);
+    }
 
 
 }

@@ -43,7 +43,7 @@ public class OwnerService {
 
     @Transactional
     public void updateOwner(Long id, String name, String department, String email){
-     Owner owner = ownerRepository.findById(id).orElseThrow( () -> new IllegalStateException("student with id " + id+ " does not exist"));
+     Owner owner = ownerRepository.findById(id).orElseThrow( () -> new IllegalStateException("owner with id " + id+ " does not exist"));
 
      if(name != null && !name.isEmpty() && !owner.getName().equals(name)){
           owner.setName(name);
@@ -63,6 +63,15 @@ public class OwnerService {
             }
      }
 
+    }
+
+    @Transactional
+    public void addPet( Long id, String species, int age, int biologicalGender, String name){
+
+        Owner owner = ownerRepository.findById(id).orElseThrow( () -> new IllegalStateException("owner with id " + id+ " does not exist"));
+        Pet pet = new Pet(species, age, biologicalGender, name);
+
+        owner.setPets(pet);
     }
 
 
