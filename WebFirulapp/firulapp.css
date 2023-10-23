@@ -3,6 +3,8 @@ body, h1, h2, h3, p, ul, li, form, input {
     margin: 0;
     padding: 0;
 }
+
+
 /*/
 /* Set a background color */
 body {
@@ -26,6 +28,7 @@ header h1 {
 /* Container styles */
 main {
     max-width: 900px;
+    
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
