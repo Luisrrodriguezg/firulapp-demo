@@ -16,7 +16,7 @@ function displayPetProfiles() {
             petProfile.innerHTML = `
                 <h2>${pet.name}</h2>
                 <p>Breed: ${pet.breed}</p>
-                <button class="viewCalendarButton" data-index="${index}">View Calendar</button>
+                <button class="viewCalendarButton" data-index="${index}">View pet</button>
                 <button class="removePetButton" data-index="${index}">Delete Pet</button>
             `;
 
@@ -57,6 +57,21 @@ function addNewPet() {
         displayPetProfiles();
     }
 }
+
+// Function to handle clicking the "View Calendar" button
+function handleViewCalendarClick(event) {
+    if (event.target.classList.contains("viewCalendarButton")) {
+        const index = event.target.getAttribute("data-index");
+        if (index !== null) {
+            const selectedPet = petProfiles[index];
+            const petName = encodeURIComponent(selectedPet.name);
+            
+            // Redirect to the firulapp.html page with the selected pet's name as a parameter
+            window.location.href = `firulapp.html?pet=${petName}`;
+        }
+    }
+}
+
 
 // Add event listener to "View Calendar" buttons
 document.getElementById("petList").addEventListener("click", handleViewCalendarClick);
