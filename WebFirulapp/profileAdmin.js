@@ -17,12 +17,25 @@ function displayPetProfiles() {
                 <h2>${pet.name}</h2>
                 <p>Breed: ${pet.breed}</p>
                 <button class="viewCalendarButton" data-index="${index}">View Calendar</button>
+                <button class="removePetButton" data-index="${index}">Delete Pet</button>
             `;
 
             petList.appendChild(petProfile);
         });
     }
 }
+
+// Function to handle clicking the "Delete Pet" button
+function handleRemovePetClick(event) {
+    if (event.target.classList.contains("removePetButton")) {
+        const index = event.target.getAttribute("data-index");
+        if (index !== null) {
+            petProfiles.splice(index, 1); // Remove the selected pet from the array
+            displayPetProfiles(); // Redisplay the updated pet profiles
+        }
+    }
+}
+
 
 // Function to handle clicking the "View Calendar" button
 function handleViewCalendarClick(event) {
@@ -50,6 +63,9 @@ document.getElementById("petList").addEventListener("click", handleViewCalendarC
 
 // Add event listener to "Add a New Pet" button
 document.getElementById("addPetButton").addEventListener("click", addNewPet);
+
+// Add event listener to "Remove Pet" buttons
+document.getElementById("petList").addEventListener("click", handleRemovePetClick);
 
 // Initial display of pet profiles
 displayPetProfiles();

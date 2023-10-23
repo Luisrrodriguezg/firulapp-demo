@@ -3,40 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Firulapp</title>
+    <link href="firulapp.css" rel="stylesheet">
+    <title>Firulapp - Pet Reminder System</title>
 </head>
 <body>
     <header>
-        <h1>My Firulapp</h1>
-        <button id="addEventButton">Add Event</button>
+        <h1>Firulapp</h1>
     </header>
 
     <main>
-        <div id="calendar">
-            <!-- Calendar content goes here -->
-        </div>
-
-        <div id="eventModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Create Event</h2>
-                <form id="eventForm">
-                    <label for="eventName">Event Name:</label>
-                    <input type="text" id="eventName" name="eventName" required>
-                    
-                    <label for="eventDate">Date:</label>
-                    <input type="date" id="eventDate" name="eventDate" required>
-                    
-                    <label for="eventTime">Time:</label>
-                    <input type="time" id="eventTime" name="eventTime" required>
-
-                    <input type="submit" value="Save">
-                </form>
+        <section id="photoAlbum">
+            <h2>Photo Album</h2>
+            <div id="photos">
+                <!-- Display uploaded photos here -->
             </div>
-        </div>
+            <input type="file" id="photoInput" accept="image/*">
+            <button id="uploadPhoto">Upload Photo</button>
+        </section>
+        
+        <section id="reminderQuestionnaire">
+            <h2>Reminder Questionnaire</h2>
+            <button id="openQuestionnaire">Open Questionnaire</button>
+        </section>
     </main>
 
-    <script src="calendar.js"></script>
+    <script src="firulapp.js"></script>
 </body>
 </html>
