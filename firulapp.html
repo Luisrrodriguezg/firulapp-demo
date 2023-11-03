@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="firulapp.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firulapp - Pet Reminder System</title>
+</head>
+<body>
+    <header>
+        <h1>Firulapp</h1>
+    </header>
+
+    <main>
+        <section id="photoAlbum">
+            <h2>Photo Album</h2>
+            <div id="photos">
+                <!-- Display uploaded photos here -->
+            </div>
+            <input type="file" id="photoInput" accept="image/*">
+            <button id="uploadPhoto">Upload Photo</button>
+        </section>
+
+        <section id="reminderSection">
+            <h2>Pet Reminder Questionnaire</h2>
+            <button id="openQuestionnaire">Open Questionnaire</button>
+            <div id="reminderQuestionnaire">
+                <!-- Display questionnaire results here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="firulapp.js"></script>
+</body>
+</html>
